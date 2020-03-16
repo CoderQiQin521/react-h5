@@ -13,9 +13,9 @@ export default defineConfig({
     }
   },
   title: '会务H5',
-  plugins: [
-    ['umi-plugin-react', {
-      dynamicImport: true
-    }]
-  ]
+  // plugins: [
+  //   ['umi-plugin-react', {
+  //     dynamicImport: true, // 路由按需加载
+  //   }],
+  // ],
 });

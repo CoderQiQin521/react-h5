@@ -5,6 +5,6 @@ import * as React from 'react';
 
 export default (props) => {
   return (
-    <div>new {props.children}</div>
+    <div>new index {props.children}</div>
   )
 }
