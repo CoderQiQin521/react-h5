@@ -16,9 +16,8 @@ import './user.less';
 */
 
 export default class User extends Component {
-  constructor(params: any) {
-    super(params);
-    console.log('params: ', params);
+  constructor(props: any) {
+    super(props);
     console.log(0, '构造函数初始化事件');
   }
   state = {
@@ -76,7 +75,7 @@ export default class User extends Component {
       <h1 className="a">{this.state.msg}</h1>
       <ul>
         {
-          list.map(item => (<li>{item}</li>))
+          list.map(item => (<li key={item}>{item}</li>))
         }
       </ul>
     </div >);
