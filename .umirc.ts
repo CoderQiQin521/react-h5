@@ -1,21 +1,22 @@
 import { defineConfig } from 'umi';
 
-let HOST_URL = ''
+let HOST_URL = '';
 export default defineConfig({
   theme: {
-    'primary-color': '#3385ff'
+    'primary-color': '#3385ff',
+    'fill-body': '#F2F2F2',
   },
   proxy: {
     '/api': {
       target: HOST_URL,
       changeOrigin: true,
-      pathRewrite: { '/api': '' }
-    }
+      pathRewrite: { '/api': '' },
+    },
   },
   title: '会务H5',
   // plugins: [
   //   ['umi-plugin-react', {
-  //     dynamicImport: true, // 路由按需加载
-  //   }],
-  // ],
+  //     dynamicImport: true
+  //   }]
+  // ]
 });
