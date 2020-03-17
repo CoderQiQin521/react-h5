@@ -11,7 +11,7 @@ class index extends Component {
         <div className="top">
           <div className="left">
             <p>XXX会议（这里是会议名称）</p>
-            <p>时间：2020-02-03-02-05</p>
+            <p>会议举办时间：2020年2余额23日</p>
             <p>举办地：郑州市XX区XXX</p>
           </div>
           <div className="right" onClick={this.saoma}>
