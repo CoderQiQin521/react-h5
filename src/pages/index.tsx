@@ -1,75 +1,106 @@
 import React from 'react';
 import styles from './index.less';
-import About from './about'
-import User from './other/user'
-import { Link, history } from 'umi'
-import { Button, Toast, List, InputItem, Card, WhiteSpace, WingBlank } from 'antd-mobile';
+import About from './about';
+import User from './other/user';
+import { Link, history } from 'umi';
+import {
+  Button,
+  Grid,
+  Toast,
+  List,
+  InputItem,
+  Card,
+  WhiteSpace,
+  WingBlank,
+} from 'antd-mobile';
+const arr = [
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '会议简介',
+    path: './intro',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '报名参会',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '会议通知',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '现场签到',
+    path: './signin',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '会议日程',
+    path: './days',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '开具发票',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '邀请嘉宾',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '酒店预订',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '会场指南',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '联系我们',
+    path: './about',
+  },
+  {
+    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
+    title: '个人中心',
+    path: './about',
+  },
+];
 
-let aa: string = '用户登录'
-// should 声明周期问题
-setTimeout(() => {
-  aa = '用户登录22';
-}, 1000);
 export default class Index extends React.Component {
   constructor(props: any) {
     super(props);
-  }
-
-  myclick() {
-    console.log(this);
-    Toast.info('数据加载中...', 1);
-    history.push('/other/user');
   }
 
   render() {
     let { props } = this;
     return (
       <div className={styles.container}>
-        <WingBlank>
-          <WhiteSpace></WhiteSpace>
-
-          <List>
-            <InputItem placeholder='公司名称'></InputItem>
-            <InputItem placeholder='公司税号'></InputItem>
-            <InputItem placeholder='公司地址 电话'></InputItem>
-          </List>
-          {/* 
-          这里是问题说明
-          */}
-
-          <Card>
-            <Card.Header title="会议信息"></Card.Header>
-            <Card.Body>
+        <Grid
+          data={arr}
+          columnNum={3}
+          renderItem={dataItem => (
+            <Link to={dataItem.path}>
               <div>
-                项目内容：这里是项目内容
-                主讲：这里是主讲人
-                会场：这里是项目举办会场
+                <img
+                  src={dataItem.icon}
+                  style={{ width: '75px', height: '75px' }}
+                  alt=""
+                />
+                <div
+                  style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}
+                >
+                  <span>{dataItem.title}</span>
+                </div>
               </div>
-            </Card.Body>
-          </Card>
-          <WhiteSpace></WhiteSpace>
-          <dl>
-            <dt><h3>xxx会议（这里是会议名称）</h3></dt>
-            <dd>签到类型：大会现场签到</dd>
-            <dd>参会人员：张xxx</dd>
-          </dl>
-          <WhiteSpace></WhiteSpace>
-          <Button icon="check-circle-o" type="primary" onClick={this.myclick.bind(this)}>确认签到</Button>
-          <WhiteSpace></WhiteSpace>
-          {/* |
-        <a href="/user">user</a> */}
-          <hr />
-
-          <Link to="/about">about</Link>
-          <Link to="/other/user">user</Link>
-
-          {props.children}
-
-          <div className={styles.title}>index-footer  这是umi框架</div>
-          {/* <About></About>
-        <User active="jaklj1111as"></User> */}
-        </WingBlank>
-      </div >
+            </Link>
+          )}
+        />
+      </div>
     );
   }
 }

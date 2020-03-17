@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import { Steps, WingBlank, WhiteSpace } from 'antd-mobile';
 import './index.less';
+import Navbar from '@/components/navbar';
 const Step = Steps.Step;
 const customIcon = () => (
   <svg
@@ -28,6 +30,7 @@ class index extends Component {
   render() {
     return (
       <div className="days-box">
+        <Navbar name="会议日程"></Navbar>
         <ul>
           <li>
             <p className="time">2020年3月26日</p>
