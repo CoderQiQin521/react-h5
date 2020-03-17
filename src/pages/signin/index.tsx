@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Link, history } from 'umi';
+import Navbar from '@/components/navbar';
+
 class index extends Component {
   saoma() {
     history.push('./signin/affirm');
@@ -8,6 +10,7 @@ class index extends Component {
   render() {
     return (
       <div>
+        <Navbar name="扫码签到"></Navbar>
         <div className="top">
           <div className="left">
             <p>XXX会议（这里是会议名称）</p>
