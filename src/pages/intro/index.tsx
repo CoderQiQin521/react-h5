@@ -1,6 +1,6 @@
 import './index.less';
 import { Link, history } from 'umi';
-import { Button, WingBlank } from 'antd-mobile';
+import { Button, WingBlank, NavBar, Icon } from 'antd-mobile';
 import React, { Component } from 'react';
 
 class index extends Component {
@@ -16,10 +16,20 @@ class index extends Component {
   }
   my() {
     console.log('我要报名');
+    history.goBack();
   }
   render() {
     return (
       <div className="my-box">
+        <div>
+          <NavBar
+            mode="light"
+            icon={<Icon type="left" />}
+            onLeftClick={this.my.bind(this)}
+          >
+            NavBar
+          </NavBar>
+        </div>
         <ul>
           <li>
             <p>基本信息</p>
