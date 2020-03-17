@@ -24,7 +24,7 @@ class index extends Component {
           <p className="margin-top-xs">我的签到码</p>
         </div>
         <div className="bottom">
-          <p className="title">签到记录</p>
+          <p className="my-title">签到记录</p>
           <div className="contend">
             <div className="heard">
               <div>参会人员</div>
