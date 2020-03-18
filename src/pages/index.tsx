@@ -27,7 +27,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '会议通知',
-    path: './about',
+    path: './inform',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
@@ -42,7 +42,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '开具发票',
-    path: './about',
+    path: './fapiao',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
@@ -57,7 +57,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '会场指南',
-    path: './about',
+    path: './guide',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',

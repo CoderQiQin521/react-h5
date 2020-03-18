@@ -2,6 +2,7 @@ import './index.less';
 import { Link, history } from 'umi';
 import { Button, WingBlank, NavBar, Icon } from 'antd-mobile';
 import React, { Component } from 'react';
+import Navbar from '@/components/navbar';
 
 class index extends Component {
   // constructor(props) {
@@ -12,24 +13,15 @@ class index extends Component {
   //   };
   // }
   onChange() {
-    console.log(1111);
+    history.goBack();
   }
   my() {
     console.log('我要报名');
-    history.goBack();
   }
   render() {
     return (
       <div className="my-box">
-        <div>
-          <NavBar
-            mode="light"
-            icon={<Icon type="left" />}
-            onLeftClick={this.my.bind(this)}
-          >
-            NavBar
-          </NavBar>
-        </div>
+        <Navbar name="会议简介"></Navbar>
         <ul>
           <li>
             <p>基本信息</p>
@@ -47,12 +39,11 @@ class index extends Component {
           </li>
         </ul>
         <div className="bottom-box">
-          <Button className="shouye" onClick={this.onChange}>
-            首页
-          </Button>
-          <Button type="primary" onClick={this.my} className="btn">
-            我要报名
-          </Button>
+          <WingBlank>
+            <Button type="primary" onClick={this.my} className="btn">
+              我要报名
+            </Button>
+          </WingBlank>
         </div>
       </div>
     );
