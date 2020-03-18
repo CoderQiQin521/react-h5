@@ -28,6 +28,8 @@ export default class Register extends React.Component {
             <div>确认密码</div>
             <InputItem type="password"></InputItem>
           </div>
+
+          <Button type="primary">提交注册</Button>
         </WingBlank >
       </div>
     );
