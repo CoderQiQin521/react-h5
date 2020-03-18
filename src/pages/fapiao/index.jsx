@@ -51,11 +51,31 @@ class index extends Component {
                 公司名称：上海永威数据采集公司
               </Link>
             </li>
-            <li>公司名称：上海永威数据采集公司</li>
-            <li>公司名称：上海永威数据采集公司</li>
-            <li>公司名称：上海永威数据采集公司</li>
-            <li>公司名称：上海永威数据采集公司</li>
-            <li>公司名称：上海永威数据采集公司</li>
+            <li>
+              <Link to="./fapiao/detail/10">
+                公司名称：上海永威数据采集公司
+              </Link>
+            </li>
+            <li>
+              <Link to="./fapiao/detail/10">
+                公司名称：上海永威数据采集公司
+              </Link>
+            </li>
+            <li>
+              <Link to="./fapiao/detail/10">
+                公司名称：上海永威数据采集公司
+              </Link>
+            </li>
+            <li>
+              <Link to="./fapiao/detail/10">
+                公司名称：上海永威数据采集公司
+              </Link>
+            </li>
+            <li>
+              <Link to="./fapiao/detail/10">
+                公司名称：上海永威数据采集公司
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
