@@ -1,21 +1,42 @@
 import React, { Component } from 'react';
-import { List, InputItem, WhiteSpace, Button,PickerView } from 'antd-mobile';
+import { List, InputItem, WhiteSpace, Button, Picker } from 'antd-mobile';
 import Navbar from '@/components/navbar';
 import './detail.less'
-const season = [
-    {
-        label: '春',
-        value: '春',
-    },
-    {
-        label: '夏',
-        value: '夏',
-    },
-];
 class index extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [
+                [{
+                    label: '普票',
+                    value: '普票',
+                },
+                {
+                    label: '牛票',
+                    value: '牛票',
+                },
+                {
+                    label: '超牛票',
+                    value: '超牛票',
+                }]
+            ],
+            cols: 1,
+            sValue: ['普票'],
+        }
+    }
+    setData(v) {
+        this.setState({
+            sValue: v
+        })
+    }
+    setData1() {
+        console.log('onchange');
+    }
     render() {
         const { id } = this.props.match.params;
         console.log('id: ', id);
+        console.log(this.state.sValue);
+
         return (
             <div className='detail'>
                 <Navbar name="开票信息"></Navbar>
@@ -65,12 +86,18 @@ class index extends Component {
                     <WhiteSpace />
                     <h3 className='my-title'>发票信息</h3>
                     <List>
-                        <InputItem
-                            clear
-                            placeholder="请输入公司名称"
+                        <Picker
+                            data={this.state.data}
+                            title="选择类型"
+                            cascade={false}
+                            value={this.state.sValue}
+                            onChange={v => this.setData(v)}
+                            // onChange={v => this.setState({ sValue: v })}
+                            onOk={v => this.setData(v)}
+                        // onOk={v => this.setState({ sValue: v })}
                         >
-                            公司名称
-                        </InputItem>
+                            <List.Item arrow="horizontal">发票类型</List.Item>
+                        </Picker>
                         <InputItem
                             clear
                             placeholder="请输入收货地址"
@@ -81,12 +108,7 @@ class index extends Component {
                     <Button type="primary" className="btn">
                         提交
                     </Button>
-                    <div>
-                    <PickerView
-                        data={season}
-                        cascade={false}
-                    />
-                    </div>
+
                 </div>
             </div>
         );
