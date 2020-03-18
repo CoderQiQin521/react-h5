@@ -27,5 +27,8 @@
     "react-dom": "^16.12.0",
     "umi": "^3.0.7",
     "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "mockjs": "^1.1.0"
   }
 }

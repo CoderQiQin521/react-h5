@@ -19,63 +19,61 @@ const customIcon = () => (
     </g>
   </svg>
 );
-const title = (
-  <div className="text-box">
-    <h4>项目内容：阿里云大型数据分析会议</h4>
-    <p>主讲：李玉河</p>
-    <p>会场：郑州市中原区航海路与桐柏路3326号</p>
-  </div>
-);
+const title = (props: any) => (<div className="text-box">
+  <h4>项目内容：{props.title}</h4>
+  <p>主讲：{props.name}</p>
+  <p>会场：{props.add}</p>
+</div>);
+
+
 class index extends Component {
+  constructor(props: Readonly<{}>) {
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
+
+  async componentWillMount() {
+    console.log(1);
+    let fs = await fetch('/api/days')
+    let res = await fs.json()
+    this.setState({
+      list: res.days
+    })
+    // console.log('res: ', res);
+
+  }
+
+  componentDidMount() {
+    console.log(2);
+
+  }
+
   render() {
+    console.log(3);
+    let { list } = this.state;
+
     return (
       <div className="days-box">
         <Navbar name="会议日程"></Navbar>
         <ul>
-          <li>
-            <p className="time">2020年3月26日</p>
-            <div className="content-box">
-              <Steps current={0}>
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-              </Steps>
-            </div>
-          </li>
-          <li>
-            <p className="time">2020年3月27日</p>
-            <div className="content-box">
-              <Steps current={-1}>
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-                <Step
-                  title="10:00-12:00"
-                  icon={customIcon()}
-                  description={title}
-                />
-              </Steps>
-            </div>
-          </li>
+          {
+            list.map((item: { date: React.ReactNode; num: number | undefined; detail: any[]; }, index: string | number | undefined) => <li key={index}>
+              <p className="time">{item.date}</p>
+              <div className="content-box">
+                <Steps current={0}>
+                  {
+                    item.detail.map((item: { time: any; }) => <Step
+                      title={item.time}
+                      icon={customIcon()}
+                      description={title(item)}
+                    />)
+                  }
+                </Steps>
+              </div>
+            </li>)
+          }
         </ul>
       </div>
     );
