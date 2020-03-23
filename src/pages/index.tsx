@@ -52,7 +52,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '酒店预订',
-    path: './about',
+    path: './hotel',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
