@@ -62,7 +62,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '联系我们',
-    path: './about',
+    path: './askwe',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
