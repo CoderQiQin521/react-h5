@@ -47,12 +47,12 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '邀请嘉宾',
-    path: './about',
+    path: './invite',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '酒店预订',
-    path: './about',
+    path: './hotel',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
@@ -62,7 +62,7 @@ const arr = [
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     title: '联系我们',
-    path: './about',
+    path: './askwe',
   },
   {
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',

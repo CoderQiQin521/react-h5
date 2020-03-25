@@ -19,14 +19,21 @@ const customIcon = () => (
     </g>
   </svg>
 );
-const title = (props: any) => (
-  <div className="text-box">
-    <h4>项目内容：{props.title}</h4>
-    <p>主讲：{props.name}</p>
-    <p>会场：{props.add}</p>
-  </div>
-);
+// const title = (props: any) => (<div className="text-box">
+//   <h4>项目内容：{props.title}</h4>
+//   <p>主讲：{props.name}</p>
+//   <p>会场：{props.add}</p>
+// </div>);
 
+const title = props => {
+  return (
+    <div className="text-box">
+      <h4>项目内容：{props.title}</h4>
+      <p>主讲：{props.name}</p>
+      <p>会场：{props.add}</p>
+    </div>
+  );
+};
 class index extends Component {
   constructor(props: Readonly<{}>) {
     super(props);
@@ -42,7 +49,7 @@ class index extends Component {
     this.setState({
       list: res.days,
     });
-    // console.log('res: ', res);
+    console.log('res: ', res);
   }
 
   componentDidMount() {
@@ -57,32 +64,23 @@ class index extends Component {
       <div className="days-box">
         <Navbar name="会议日程"></Navbar>
         <ul>
-          {list.map(
-            (
-              item: {
-                date: React.ReactNode;
-                num: number | undefined;
-                detail: any[];
-              },
-              index: string | number | undefined,
-            ) => (
-              <li key={index}>
-                <p className="time">{item.date}</p>
-                <div className="content-box">
-                  <Steps current={0}>
-                    {item.detail.map((item: { time: any }, index) => (
-                      <Step
-                        title={item.time}
-                        key={index}
-                        icon={customIcon()}
-                        description={title(item)}
-                      />
-                    ))}
-                  </Steps>
-                </div>
-              </li>
-            ),
-          )}
+          {list.map((item, index) => (
+            <li key={index}>
+              <p className="time">{item.date}</p>
+              <div className="content-box">
+                <Steps current={0}>
+                  {item.detail.map((item, index) => (
+                    <Step
+                      key={index}
+                      title={item.time}
+                      icon={customIcon()}
+                      description={title(item)}
+                    />
+                  ))}
+                </Steps>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     );
